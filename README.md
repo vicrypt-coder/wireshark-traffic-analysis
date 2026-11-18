@@ -25,6 +25,17 @@ Hands-on network traffic analysis using Wireshark, completed while learning cybe
 - The AAAA response returned two IPv6 addresses.
 - Each response arrived roughly 30 to 40 milliseconds after its query.
 
+- ### Capture file properties
+
+I repeated the capture and checked the file's properties (**Statistics > Capture File Properties**) to see the capture in numbers.
+
+![Capture file properties](01-dns-capture/dns-capture-properties.png)
+
+- 1,844 packets captured over about 2 minutes 17 seconds, with no capture filter.
+- After applying the DNS display filter, only 3 packets (0.2%) remained.
+- This shows why display filters matter: the relevant packets are a tiny fraction of everything captured.
+- Wireshark also records a SHA-256 hash of the capture file, which can be used to prove the file hasn't been changed (the same idea as my file hashing lab).
+
 **What I learned:**
 - How a DNS lookup looks at packet level: a query goes out, a response comes back.
 - Why a domain can have both IPv4 and IPv6 addresses.
